@@ -1,11 +1,11 @@
 privilegeTargets:
   'Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
-    'CodeQ.NeosCspReportEndpoint:EndpointController':
+    'CodeQ.CspReportEndpoint:EndpointController':
       label: 'Report CSP Violation Controller'
-      matcher: 'method(CodeQ\NeosCspReportEndpoint\Controller\EndpointController->reportAction())'
+      matcher: 'method(CodeQ\CspReportEndpoint\Controller\EndpointController->(index|report)Action())'
 
 roles:
   'Neos.Flow:Everybody':
     privileges:
-      - privilegeTarget: 'CodeQ.NeosCspReportEndpoint:EndpointController'
+      - privilegeTarget: 'CodeQ.CspReportEndpoint:EndpointController'
         permission: GRANT

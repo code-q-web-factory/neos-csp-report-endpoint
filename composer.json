@@ -1,13 +1,13 @@
 {
-    "name": "codeq/neos-csp-report-endpoint",
+    "name": "codeq/csp-report-endpoint",
     "description": "Provides an endpoint for logging CSP violations.",
     "type": "neos-package",
     "require": {
-        "neos/flow": "^7.0"
+        "neos/flow": "^6.0 || ^7.0"
     },
     "autoload": {
         "psr-4": {
-            "CodeQ\\NeosCspReportEndpoint\\": "Classes/"
+            "CodeQ\\CspReportEndpoint\\": "Classes/"
         }
     },
     "authors": [
@@ -27,9 +27,9 @@
         ]
     },
     "extra": {
-        "installer-name": "CodeQ.NeosCspReportEndpoint",
+        "installer-name": "CodeQ.CspReportEndpoint",
         "neos": {
-            "package-key": "CodeQ.NeosCspReportEndpoint"
+            "package-key": "CodeQ.CspReportEndpoint"
         }
     }
 }

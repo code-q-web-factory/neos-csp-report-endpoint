@@ -1,9 +1,9 @@
 <?php
 
 
-namespace CodeQ\NeosCspReportEndpoint\Controller;
+namespace CodeQ\CspReportEndpoint\Controller;
 
-use CodeQ\NeosCspReportEndpoint\Mvc\View\NullView;
+use CodeQ\CspReportEndpoint\Mvc\View\NullView;
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Mvc\Controller\ActionController;
 use Psr\Log\LoggerInterface;
@@ -23,15 +23,16 @@ class EndpointController extends ActionController
     ];
 
     /**
-     * @param string $reportData
-     * @Flow\MapRequestBody("$reportData")
      */
-    public function reportAction(string $reportData)
+    public function reportAction()
     {
-        // $reportData = $this->getControllerContext()->getRequest()->getHttpRequest()->getBody();
-        if($reportData = json_decode($reportData, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES)) {
+        if($this->request->hasArgument('csp-report')) {
+            $reportData = $this->request->getArgument('csp-report');
             $this->systemLogger->critical('Content-Security-Policy Violation reported',
                 $reportData);
+            $this->response->setStatusCode(204);
+        } else {
+            $this->response->setStatusCode(400);
         }
     }
 }

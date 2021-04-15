@@ -1,7 +1,7 @@
 <?php
 
 
-namespace CodeQ\NeosCspReportEndpoint\Mvc\View;
+namespace CodeQ\CspReportEndpoint\Mvc\View;
 
 
 use Neos\Flow\Mvc\View\AbstractView;
@@ -13,6 +13,6 @@ class NullView extends AbstractView
      */
     public function render()
     {
-        return 'fuego';
+        return null;
     }
 }

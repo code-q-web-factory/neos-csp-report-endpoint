@@ -2,5 +2,5 @@ Neos:
   Flow:
     mvc:
       routes:
-        'CodeQ.NeosCspReportEndpoint':
+        'CodeQ.CspReportEndpoint':
           position: 'start'
