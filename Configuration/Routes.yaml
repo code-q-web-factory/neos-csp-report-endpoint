@@ -1,0 +1,7 @@
+- name: 'csp-violation-report-endpoint'
+  uriPattern: 'csp-violation-report-endpoint'
+  default:
+    '@package': 'CodeQ.NeosCspReportEndpoint'
+    '@controller': 'Endpoint'
+    '@action': 'report'
+    '@format': 'html'

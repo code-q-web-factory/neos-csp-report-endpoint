@@ -1,0 +1,6 @@
+Neos:
+  Flow:
+    mvc:
+      routes:
+        'CodeQ.NeosCspReportEndpoint':
+          position: 'start'
