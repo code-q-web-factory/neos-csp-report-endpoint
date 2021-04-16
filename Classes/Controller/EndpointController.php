@@ -4,6 +4,7 @@
 namespace CodeQ\CspReportEndpoint\Controller;
 
 use CodeQ\CspReportEndpoint\Mvc\View\NullView;
+use Exception;
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Mvc\Controller\ActionController;
 use Psr\Log\LoggerInterface;
@@ -26,12 +27,11 @@ class EndpointController extends ActionController
      */
     public function reportAction()
     {
-        if($this->request->hasArgument('csp-report')) {
-            $reportData = $this->request->getArgument('csp-report');
-            $this->systemLogger->critical('Content-Security-Policy Violation reported',
-                $reportData);
+        try {
+            $cspReport = json_decode(file_get_contents('php://input'), true);
+            $this->systemLogger->critical('Content-Security-Policy Violation reported:', $cspReport);
             $this->response->setStatusCode(204);
-        } else {
+        } catch (Exception $e) {
             $this->response->setStatusCode(400);
         }
     }

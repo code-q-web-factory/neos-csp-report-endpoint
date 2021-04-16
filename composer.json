@@ -2,6 +2,7 @@
     "name": "codeq/csp-report-endpoint",
     "description": "Provides an endpoint for logging CSP violations.",
     "type": "neos-package",
+    "license": "MIT",
     "require": {
         "neos/flow": "^6.0 || ^7.0"
     },
